@@ -1,0 +1,145 @@
+---
+// src/components/Services.astro
+
+const services = [
+    {
+        id: '1',
+        title: '1-a-1',
+        subtitle: 'Presencial',
+        description: 'Entrenamiento personal exclusivo. Corrección biomecánica y motivación en tiempo real.',
+        icon: 'dumbbell',
+        cta: 'Detalles'
+    },
+    {
+        id: '2',
+        title: 'Plan Online',
+        subtitle: 'Pro',
+        description: 'Lleva mi metodología contigo. Acceso a app exclusiva, videos HD y chat directo.',
+        icon: 'device',
+        cta: 'Detalles'
+    },
+    {
+        id: '3',
+        title: 'Reto',
+        subtitle: '90 Días',
+        description: 'Transformación radical. Plan integral de nutrición, entrenamiento y mentalidad.',
+        icon: 'timer',
+        isPopular: true,
+        cta: 'Inscribirse'
+    },
+    {
+        id: '4',
+        title: 'Nutrición',
+        subtitle: 'Deportiva',
+        description: 'Combustible para ganar. Estrategias nutricionales personalizadas para rendimiento.',
+        icon: 'food',
+        cta: 'Detalles'
+    }
+];
+---
+
+<section id="programas" class="py-24 bg-background-dark relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        
+        <!-- HEADER -->
+        <div class="flex flex-col md:flex-row justify-between items-end mb-16 border-b-4 border-primary pb-6 reveal-up">
+            <div>
+                <span class="font-mono text-primary font-bold uppercase tracking-widest text-sm mb-2 block">03 // Servicios</span>
+                <h2 class="text-5xl lg:text-7xl font-display font-bold text-white uppercase leading-none">
+                    Elige tu <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-orange-400">Desafío</span>
+                </h2>
+            </div>
+            <div class="hidden md:block pb-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-primary animate-bounce"><path d="M12 5v14"></path><path d="m19 12-7 7-7-7"></path></svg>
+            </div>
+        </div>
+
+        <!-- CARDS -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {services.map((service, i) => (
+                <div 
+                    style={`transition-delay:${i * 120}ms`}
+                    class:list={[
+                        "group p-8 transition-all duration-700 relative overflow-hidden flex flex-col justify-between min-h-[420px] reveal-card",
+                        {
+                            "bg-surface-lighter border-2 border-primary shadow-[0_0_30px_rgba(255,107,0,0.15)] transform lg:-translate-y-4 z-10": service.isPopular,
+                            "bg-surface-dark border border-white/10 hover:border-primary/50 hover:-translate-y-1 hover:shadow-[8px_8px_0px_0px_rgba(255,107,0,1)]": !service.isPopular
+                        }
+                    ]}
+                >
+                    <!-- ICON BG -->
+                    <div class:list={[
+                        "absolute top-0 right-0 p-4 transition-opacity",
+                        service.isPopular ? "opacity-20" : "opacity-5 group-hover:opacity-15"
+                    ]}>
+                        {service.icon === 'dumbbell' && (
+                            <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class={service.isPopular ? "text-primary" : "text-white"}><path d="M14.4 14.4 9.6 9.6"/></svg>
+                        )}
+                        {service.icon === 'device' && (
+                            <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class={service.isPopular ? "text-primary" : "text-white"}><rect width="14" height="20" x="5" y="2" rx="2"/></svg>
+                        )}
+                        {service.icon === 'timer' && (
+                            <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class={service.isPopular ? "text-primary" : "text-white"}><circle cx="12" cy="14" r="8"/></svg>
+                        )}
+                        {service.icon === 'food' && (
+                            <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class={service.isPopular ? "text-primary" : "text-white"}><path d="M7 2v20"/></svg>
+                        )}
+                    </div>
+
+                    {service.isPopular && (
+                        <div class="absolute top-0 inset-x-0 bg-primary text-black text-center text-[10px] font-bold py-1 uppercase tracking-[0.2em] font-mono">
+                            Más Popular
+                        </div>
+                    )}
+
+                    <div class="mt-6">
+                        <h3 class="text-3xl font-display font-bold text-white mb-2 uppercase italic leading-none tracking-tighter">
+                            {service.title} <br />
+                            <span class="text-primary not-italic">{service.subtitle}</span>
+                        </h3>
+                        <div class:list={["w-12 h-1 mb-6 mt-4", service.isPopular ? "bg-white" : "bg-primary"]}></div>
+                        <p class="text-gray-400 text-sm font-mono leading-relaxed">
+                            {service.description}
+                        </p>
+                    </div>
+
+                    <button class:list={[
+                        "w-full py-4 font-bold text-sm uppercase tracking-widest transition-all duration-300 mt-8",
+                        service.isPopular 
+                            ? "bg-primary text-black hover:bg-white shadow-[4px_4px_0px_0px_#fff]" 
+                            : "border border-white/20 text-white hover:bg-primary hover:text-black hover:border-primary"
+                    ]}>
+                        {service.cta}
+                    </button>
+                </div>
+            ))}
+        </div>
+    </div>
+</section>
+
+<style>
+.reveal-up,
+.reveal-card {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s cubic-bezier(.2,.65,.3,1);
+}
+
+.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+</style>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('reveal-visible');
+      }
+    });
+  }, { threshold: 0.2 });
+
+  document.querySelectorAll('.reveal-up, .reveal-card')
+    .forEach(el => observer.observe(el));
+</script>

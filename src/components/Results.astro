@@ -1,0 +1,120 @@
+---
+// src/components/Results.astro
+const results = [
+    {
+        id: '1',
+        name: 'Carlos M.',
+        result: '-15kg Grasa',
+        quote: '"Resultados garantizados si sigues el plan."',
+        image: 'https://images.unsplash.com/photo-1548690312-e3b507d8c110?q=80&w=1974&auto=format&fit=crop'
+    },
+    {
+        id: '2',
+        name: 'David R.',
+        result: '+8kg Músculo',
+        quote: '"Axel cambió mi mentalidad para siempre."',
+        image: 'https://images.unsplash.com/photo-1627483262268-9c96d8e360c7?q=80&w=1984&auto=format&fit=crop'
+    },
+    {
+        id: '3',
+        name: 'Laura S.',
+        result: 'Competición',
+        quote: '"Exigencia máxima, recompensa máxima."',
+        image: 'https://images.unsplash.com/photo-1610416348604-984489ae2113?q=80&w=2070&auto=format&fit=crop'
+    }
+];
+---
+
+<section id="testimonios" class="py-24 bg-surface-dark relative border-y border-white/10 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        
+        <!-- HEADER -->
+        <div class="mb-12 flex flex-col md:flex-row justify-between md:items-end gap-6 reveal-up">
+            <div>
+                <span class="bg-primary text-black px-2 py-1 font-mono text-xs font-bold uppercase mb-2 inline-block">
+                    04 // Evidencia
+                </span>
+                <h2 class="text-5xl lg:text-7xl font-display font-bold text-white uppercase italic leading-none">
+                    Resultados <span class="text-outline-primary">Reales</span>
+                </h2>
+            </div>
+            <a href="#galeria" class="hidden md:inline-flex items-center gap-2 text-primary hover:text-white transition-colors font-bold uppercase tracking-widest text-sm border-b-2 border-primary hover:border-white pb-1 w-fit">
+                Ver Galería Completa
+            </a>
+        </div>
+
+        <!-- GRID -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-0 border border-white/10">
+            {results.map((item, i) => (
+                <div 
+                    style={`transition-delay:${i * 150}ms`}
+                    class="group relative h-[500px] md:h-[600px] overflow-hidden bg-black border-r border-white/10 last:border-r-0 reveal-card"
+                >
+                    
+                    <img 
+                        src={item.image} 
+                        alt={`Transformación de ${item.name}`} 
+                        class="absolute inset-0 w-full h-full object-cover grayscale opacity-40 group-hover:opacity-90 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out"
+                        loading="lazy"
+                    />
+                    
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-90 group-hover:opacity-70 transition-opacity duration-500"></div>
+                    
+                    <div class="absolute bottom-0 left-0 p-8 w-full">
+                        <div class="flex items-center gap-4 mb-4">
+                            <span class="bg-primary text-black text-sm font-bold px-4 py-1 uppercase tracking-tighter skew-x-[-12deg] shadow-[4px_4px_0px_0px_rgba(255,255,255,0.3)]">
+                                {item.result}
+                            </span>
+                        </div>
+                        
+                        <h4 class="text-white font-display text-4xl font-bold uppercase italic mb-3 tracking-tighter">
+                            {item.name}
+                        </h4>
+                        
+                        <p class="text-gray-300 text-sm font-mono border-l-2 border-primary pl-4 py-1 italic leading-relaxed max-w-[90%]">
+                            {item.quote}
+                        </p>
+                    </div>
+
+                    <div class="absolute top-0 right-0 w-8 h-8 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        <div class="absolute top-4 right-4 w-4 h-[1px] bg-primary"></div>
+                        <div class="absolute top-4 right-4 h-4 w-[1px] bg-primary"></div>
+                    </div>
+                </div>
+            ))}
+        </div>
+        
+        <div class="mt-12 md:hidden text-center">
+             <a href="#galeria" class="inline-flex items-center gap-2 text-primary font-bold uppercase tracking-widest text-sm border-b-2 border-primary pb-1">
+                Ver Galería Completa
+            </a>
+        </div>
+    </div>
+</section>
+
+<style>
+.reveal-up,
+.reveal-card {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: all 0.9s cubic-bezier(.2,.65,.3,1);
+}
+
+.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+</style>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('reveal-visible');
+      }
+    });
+  }, { threshold: 0.2 });
+
+  document.querySelectorAll('.reveal-up, .reveal-card')
+    .forEach(el => observer.observe(el));
+</script>

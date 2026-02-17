@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+@view-transition {
+  navigation: auto;
+}
+
+@theme {
+  --color-primary: #FF6B00;
+  --color-primary-dark: #e65100;
+  --color-background-dark: #0a0a0a;
+  --color-surface-dark: #121212;
+  --color-surface-lighter: #1e1e1e;
+
+  --font-display: "Oswald", sans-serif;
+  --font-body: "Roboto", sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-background-dark text-gray-100 font-body antialiased selection:bg-primary selection:text-white overflow-x-hidden;
+  }
+}
+
+@layer utilities {
+  .text-outline {
+    -webkit-text-stroke: 2px rgba(255, 255, 255, 0.1);
+    color: transparent;
+  }
+  
+  .text-outline-primary {
+    -webkit-text-stroke: 2px #FF6B00;
+    color: transparent;
+  }
+
+  .text-outline-black {
+    -webkit-text-stroke: 2px #000000;
+    color: transparent;
+  }
+
+  .bg-noise {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+  }
+
+  .bg-grid-pattern {
+    background-image: linear-gradient(#333 1px, transparent 1px), linear-gradient(90deg, #333 1px, transparent 1px);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Scrollbar personalizada */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: #0a0a0a; }
+::-webkit-scrollbar-thumb { 
+  background: #333; 
+  border: 2px solid #0a0a0a; 
+}
+::-webkit-scrollbar-thumb:hover { background: #FF6B00; }

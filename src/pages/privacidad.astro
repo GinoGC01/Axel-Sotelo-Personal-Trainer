@@ -1,0 +1,115 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const lastUpdate = "17 de Febrero, 2026";
+---
+
+<Layout title="Política de Privacidad | Axel Sotelo">
+  
+  <main class="pt-32 pb-24 bg-background-dark min-h-screen">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <header class="mb-16 border-l-4 border-primary pl-6 md:pl-10">
+        <span class="font-mono text-primary font-bold uppercase tracking-[0.3em] text-sm block mb-4">
+          Data Protection // v2.0
+        </span>
+        <h1 class="text-5xl md:text-7xl font-display font-bold text-white uppercase italic leading-none tracking-tighter">
+          Política de <br />
+          <span class="text-outline-primary">Privacidad</span>
+        </h1>
+        <p class="text-gray-500 font-mono text-xs mt-8 uppercase tracking-widest">
+          Actualizado el {lastUpdate}
+        </p>
+      </header>
+
+      <div class="space-y-12 text-gray-300 font-body leading-relaxed">
+        
+        <section class="group">
+          <div class="flex items-center gap-4 mb-4">
+            <span class="font-display text-2xl text-primary font-bold">01.</span>
+            <h2 class="text-2xl font-display font-bold text-white uppercase tracking-wider">Responsable del Tratamiento</h2>
+          </div>
+          <div class="pl-12 border-l border-white/10 group-hover:border-primary transition-colors duration-500">
+            <p>
+              <strong>Axel Sotelo Fitness</strong> (en adelante, "El Entrenador") es el responsable del tratamiento de tus datos personales. Operamos bajo el marco legal del RGPD (Reglamento General de Protección de Datos) para garantizar que tu información esté blindada.
+            </p>
+          </div>
+        </section>
+
+        <section class="group">
+          <div class="flex items-center gap-4 mb-4">
+            <span class="font-display text-2xl text-primary font-bold">02.</span>
+            <h2 class="text-2xl font-display font-bold text-white uppercase tracking-wider">Qué Datos Necesitamos</h2>
+          </div>
+          <div class="pl-12 border-l border-white/10 group-hover:border-primary transition-colors duration-500">
+            <p class="mb-4 text-white font-bold uppercase text-sm tracking-wide">Para optimizar tu rendimiento, procesamos:</p>
+            <ul class="list-none space-y-3 font-mono text-sm uppercase italic">
+              <li class="flex items-start gap-2">
+                <span class="text-primary mt-1">/</span> <strong class="text-white">Identificación:</strong> Nombre, email y WhatsApp.
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-primary mt-1">/</span> <strong class="text-white">Datos Biométricos:</strong> Peso, altura, % grasa y medidas.
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-primary mt-1">/</span> <strong class="text-white">Datos de Salud:</strong> Lesiones previas, patologías o alergias (Datos sensibles tratados con máxima confidencialidad).
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-primary mt-1">/</span> <strong class="text-white">Contenido Visual:</strong> Fotos de progreso (Solo bajo consentimiento explícito).
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="group">
+          <div class="flex items-center gap-4 mb-4">
+            <span class="font-display text-2xl text-primary font-bold">03.</span>
+            <h2 class="text-2xl font-display font-bold text-white uppercase tracking-wider">Uso de la Información</h2>
+          </div>
+          <div class="pl-12 border-l border-white/10 group-hover:border-primary transition-colors duration-500">
+            <p>
+              Tus datos tienen un solo objetivo: **crear el plan más eficiente posible**. No vendemos bases de datos ni cedemos tu información a terceros para fines comerciales. La información se usa para el seguimiento de tu entrenamiento, soporte vía WhatsApp y facturación.
+            </p>
+          </div>
+        </section>
+
+        <section class="group">
+          <div class="flex items-center gap-4 mb-4">
+            <span class="font-display text-2xl text-primary font-bold">04.</span>
+            <h2 class="text-2xl font-display font-bold text-white uppercase tracking-wider">Seguridad Blindada</h2>
+          </div>
+          <div class="pl-12 border-l border-white/10 group-hover:border-primary transition-colors duration-500">
+            <p>
+              Implementamos medidas técnicas de cifrado y servidores seguros. Tus fotos de progreso y datos de salud se almacenan en sistemas con doble factor de autenticación. Aquí tu privacidad se entrena con la misma intensidad que tus músculos.
+            </p>
+          </div>
+        </section>
+
+        <section class="group">
+          <div class="flex items-center gap-4 mb-4">
+            <span class="font-display text-2xl text-primary font-bold">05.</span>
+            <h2 class="text-2xl font-display font-bold text-white uppercase tracking-wider">Tus Derechos (ARCO)</h2>
+          </div>
+          <div class="pl-12 border-l border-white/10 group-hover:border-primary transition-colors duration-500">
+            <p>
+              Tienes derecho a acceder, rectificar, cancelar u oponerte al tratamiento de tus datos en cualquier momento. Solo tienes que enviar un correo a <strong class="text-primary">info@axelsotelo.com</strong> con el asunto "Derechos de Privacidad".
+            </p>
+          </div>
+        </section>
+
+      </div>
+
+      <div class="mt-20 p-8 bg-surface-dark border border-white/10 flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full -mr-16 -mt-16 blur-3xl"></div>
+        <div class="relative z-10">
+          <h3 class="font-display text-2xl font-bold text-white uppercase">¿Quieres eliminar tus datos?</h3>
+          <p class="text-gray-500 font-mono text-sm mt-1">Ejecutamos tu derecho al olvido de inmediato.</p>
+        </div>
+        <a href="mailto:info@axelsotelo.com" class="relative z-10 bg-white text-black font-display font-bold py-4 px-8 uppercase tracking-widest hover:bg-primary transition-colors">
+          Solicitar Baja
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+</Layout>

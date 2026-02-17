@@ -1,0 +1,122 @@
+---
+// Footer.astro
+const currentYear = new Date().getFullYear();
+const whatsappNumber = "34600000000";
+const whatsappLink = `https://wa.me/${whatsappNumber}?text=Hola%20Axel,%20quiero%20empezar%20mi%20entrenamiento.`;
+---
+
+<section class="py-32 relative overflow-hidden bg-primary flex items-center justify-center border-b border-black/10 reveal-impact">
+    <div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+        <h2 class="text-6xl md:text-8xl font-display font-bold text-black mb-8 uppercase italic tracking-tighter leading-[0.85] impact-item">
+            Tu excusa <br /> termina <span class="text-white text-outline-black">hoy</span>
+        </h2>
+        <p class="text-black text-xl md:text-2xl font-bold font-mono max-w-2xl mx-auto mb-12 uppercase tracking-tight impact-item" style="transition-delay:120ms">
+            Plazas limitadas. Solo gente seria.
+        </p>
+        <a 
+            href={whatsappLink} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="inline-block bg-black text-white hover:bg-white hover:text-black font-display font-bold py-6 px-16 text-2xl uppercase tracking-wider transition-all shadow-[8px_8px_0px_0px_rgba(255,255,255,0.25)] hover:shadow-[12px_12px_0px_0px_rgba(0,0,0,0.25)] hover:-translate-y-1 impact-item"
+            style="transition-delay:240ms"
+        >
+            Únete al Equipo
+        </a>
+    </div>
+</section>
+
+<footer id="contacto" class="bg-black text-white pt-24 pb-12 border-t border-white/10 reveal-impact">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-12 mb-20 impact-item">
+            
+            <div class="md:col-span-4">
+                <span class="font-display font-bold text-5xl text-white tracking-tighter block mb-6 italic border-l-4 border-primary pl-4">
+                    AXEL<br /><span class="text-primary">SOTELO</span>
+                </span>
+                <p class="text-gray-500 text-sm leading-relaxed mb-8 font-mono max-w-xs">
+                    Entrenamiento personal de alto nivel. Resultados reales, sostenibles y medibles. Buenos Aires, zona Norte y Online.
+                </p>
+            </div>
+
+            <div class="md:col-span-2">
+                <h4 class="font-mono font-bold text-xs text-primary uppercase mb-6 tracking-widest">Menu</h4>
+                <ul class="space-y-4 text-sm font-bold uppercase tracking-wide">
+                    <li><a href="#inicio" class="hover:text-primary transition-colors">Inicio</a></li>
+                    <li><a href="#sobre-mi" class="hover:text-primary transition-colors">Sobre Mí</a></li>
+                    <li><a href="#programas" class="hover:text-primary transition-colors">Programas</a></li>
+                    <li><a href="#testimonios" class="hover:text-primary transition-colors">Testimonios</a></li>
+                </ul>
+            </div>
+
+            <div class="md:col-span-3">
+                <h4 class="font-mono font-bold text-xs text-primary uppercase mb-6 tracking-widest">Contacto</h4>
+                <ul class="space-y-4 text-sm font-mono text-gray-400">
+                    <li>info@axelsotelo.com</li>
+                    <li>+54 1122334455</li>
+                    <li>Buenos Aires, Argentina</li>
+                </ul>
+            </div>
+
+            <div class="md:col-span-3">
+                <h4 class="font-mono font-bold text-xs text-primary uppercase mb-6 tracking-widest">Atención Inmediata</h4>
+                <a 
+                    href={whatsappLink} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    class="flex items-center justify-center gap-3 bg-white/5 border border-white/10 py-4 text-white hover:bg-primary hover:text-black hover:border-primary transition-all font-display font-bold uppercase tracking-widest text-sm"
+                >
+                    WhatsApp Directo
+                </a>
+            </div>
+        </div>
+
+        <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-600 uppercase tracking-widest font-bold font-mono impact-item" style="transition-delay:180ms">
+            <p>© {currentYear} Axel Sotelo Fitness.</p>
+            <div class="flex space-x-6 mt-4 md:mt-0">
+                <a href="/privacidad" class="hover:text-white transition-colors">Privacidad</a>
+                <a href="/terminos" class="hover:text-white transition-colors">Términos</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<style>
+.reveal-impact {
+  opacity: 0;
+  transform: translateY(120px) scale(0.95);
+  filter: blur(12px);
+  transition: all 0.7s cubic-bezier(.15,.85,.25,1);
+}
+
+.reveal-impact.show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  filter: blur(0);
+}
+
+.impact-item {
+  opacity: 0;
+  transform: translateY(80px);
+  transition: all 0.6s cubic-bezier(.2,.9,.2,1);
+}
+
+.reveal-impact.show .impact-item {
+  opacity: 1;
+  transform: translateY(0);
+}
+</style>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+      }
+    });
+  }, { threshold: 0.15 });
+
+  document.querySelectorAll('.reveal-impact')
+    .forEach(el => observer.observe(el));
+</script>

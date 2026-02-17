@@ -1,0 +1,113 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const lastUpdate = "17 de Febrero, 2026";
+---
+
+<Layout title="Términos y Condiciones | Axel Sotelo">
+  
+  <main class="pt-32 pb-24 bg-background-dark min-h-screen">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <header class="mb-16 border-l-4 border-primary pl-6 md:pl-10">
+        <span class="font-mono text-primary font-bold uppercase tracking-[0.3em] text-sm block mb-4">
+          Legal // v2.0
+        </span>
+        <h1 class="text-5xl md:text-7xl font-display font-bold text-white uppercase italic leading-none tracking-tighter">
+          Términos <br />
+          <span class="text-outline-primary">y Condiciones</span>
+        </h1>
+        <p class="text-gray-500 font-mono text-xs mt-8 uppercase tracking-widest">
+          Última actualización: {lastUpdate}
+        </p>
+      </header>
+
+      <div class="space-y-12 text-gray-300 font-body leading-relaxed">
+        
+        <section class="group">
+          <div class="flex items-center gap-4 mb-4">
+            <span class="font-display text-2xl text-primary font-bold">01.</span>
+            <h2 class="text-2xl font-display font-bold text-white uppercase tracking-wider">Aceptación del Desafío</h2>
+          </div>
+          <div class="pl-12 border-l border-white/10 group-hover:border-primary transition-colors duration-500">
+            <p>
+              Al acceder a los servicios de <strong>Axel Sotelo Fitness</strong>, ya sea a través de asesoría presencial u online, el usuario acepta cumplir con estos términos. Nuestros programas están diseñados para personas comprometidas; si no estás dispuesto a seguir la disciplina marcada, estos servicios no son para ti.
+            </p>
+          </div>
+        </section>
+
+        <section class="group">
+          <div class="flex items-center gap-4 mb-4">
+            <span class="font-display text-2xl text-primary font-bold">02.</span>
+            <h2 class="text-2xl font-display font-bold text-white uppercase tracking-wider">Responsabilidad y Salud</h2>
+          </div>
+          <div class="pl-12 border-l border-white/10 group-hover:border-primary transition-colors duration-500">
+            <p class="mb-4">
+              El entrenamiento de alta intensidad conlleva riesgos físicos. Es responsabilidad absoluta del usuario:
+            </p>
+            <ul class="list-none space-y-2 font-mono text-sm uppercase">
+              <li class="flex items-start gap-2 italic">
+                <span class="text-primary mt-1">/</span> Consultar a un médico antes de iniciar cualquier programa.
+              </li>
+              <li class="flex items-start gap-2 italic">
+                <span class="text-primary mt-1">/</span> Notificar cualquier lesión o condición médica previa.
+              </li>
+              <li class="flex items-start gap-2 italic">
+                <span class="text-primary mt-1">/</span> Ejecutar los movimientos bajo su propio riesgo en modalidades online.
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="group">
+          <div class="flex items-center gap-4 mb-4">
+            <span class="font-display text-2xl text-primary font-bold">03.</span>
+            <h2 class="text-2xl font-display font-bold text-white uppercase tracking-wider">Pagos y Cancelaciones</h2>
+          </div>
+          <div class="pl-12 border-l border-white/10 group-hover:border-primary transition-colors duration-500">
+            <p>
+              Debido a la naturaleza personalizada de las planificaciones y el bloqueo de plazas limitadas, <strong>no se realizan devoluciones</strong> una vez iniciado el servicio o entregado el material digital. Las cancelaciones de sesiones presenciales deben realizarse con un mínimo de 24 horas de antelación; de lo contrario, la sesión se considerará consumida.
+            </p>
+          </div>
+        </section>
+
+        <section class="group">
+          <div class="flex items-center gap-4 mb-4">
+            <span class="font-display text-2xl text-primary font-bold">04.</span>
+            <h2 class="text-2xl font-display font-bold text-white uppercase tracking-wider">Propiedad Intelectual</h2>
+          </div>
+          <div class="pl-12 border-l border-white/10 group-hover:border-primary transition-colors duration-500">
+            <p>
+              Todo el contenido (rutinas, guías de nutrición, videos y metodología) es propiedad exclusiva de Axel Sotelo. Queda terminantemente prohibida su distribución, venta o reproducción total o parcial. El incumplimiento de esto resultará en la terminación inmediata del servicio y acciones legales.
+            </p>
+          </div>
+        </section>
+
+        <section class="group">
+          <div class="flex items-center gap-4 mb-4">
+            <span class="font-display text-2xl text-primary font-bold">05.</span>
+            <h2 class="text-2xl font-display font-bold text-white uppercase tracking-wider">Ley Aplicable</h2>
+          </div>
+          <div class="pl-12 border-l border-white/10 group-hover:border-primary transition-colors duration-500">
+            <p>
+              Estos términos se rigen por las leyes de España. Cualquier disputa será resuelta en los tribunales correspondientes a la ciudad de Madrid.
+            </p>
+          </div>
+        </section>
+
+      </div>
+
+      <div class="mt-20 p-8 bg-surface-dark border border-white/10 flex flex-col md:flex-row items-center justify-between gap-8">
+        <div>
+          <h3 class="font-display text-2xl font-bold text-white uppercase">¿Tienes dudas legales?</h3>
+          <p class="text-gray-500 font-mono text-sm mt-1">Escríbenos antes de comenzar tu programa.</p>
+        </div>
+        <a href="mailto:info@axelsotelo.com" class="bg-primary text-black font-display font-bold py-4 px-8 uppercase tracking-widest hover:bg-white transition-colors">
+          Contactar Soporte
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+</Layout>
